@@ -15,10 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyForm", "MyForm\MyForm.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "popup", "Popup\popup.csproj", "{325BEEFB-2F63-4AB7-A501-7CAFC3525218}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yzqsoft", "yzqsoft\yzqsoft.csproj", "{957E79F4-F385-4B02-B67C-0FBF012CCA90}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetDiskList", "GetDiskList\GetDiskList.csproj", "{4A26EDC8-DB4B-4FF3-A9F5-6D85B52D0F75}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,14 +45,6 @@ Global
 		{325BEEFB-2F63-4AB7-A501-7CAFC3525218}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{325BEEFB-2F63-4AB7-A501-7CAFC3525218}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{325BEEFB-2F63-4AB7-A501-7CAFC3525218}.Release|Any CPU.Build.0 = Release|Any CPU
-		{957E79F4-F385-4B02-B67C-0FBF012CCA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{957E79F4-F385-4B02-B67C-0FBF012CCA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{957E79F4-F385-4B02-B67C-0FBF012CCA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{957E79F4-F385-4B02-B67C-0FBF012CCA90}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A26EDC8-DB4B-4FF3-A9F5-6D85B52D0F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A26EDC8-DB4B-4FF3-A9F5-6D85B52D0F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A26EDC8-DB4B-4FF3-A9F5-6D85B52D0F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A26EDC8-DB4B-4FF3-A9F5-6D85B52D0F75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

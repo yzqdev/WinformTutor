@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.AccessControl;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,7 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-//www.srcfans.com
+using System.IO;
+ 
 namespace MyForm
 {
     public partial class Form1 : Form
@@ -15,10 +17,11 @@ namespace MyForm
         {
             InitializeComponent();
         }
+        const string MyDir= @"C:\Users\yanni\.pm2\logs";
 
         private void button1_Click(object sender, EventArgs e)
         {//获取指定目录中的所有文件
-            var MyDir = @"C:\Windows";
+             
             var MyInfo = MyDir + "目录下的所有文件包括：";
             foreach (string MyFile in System.IO.Directory.GetFiles(MyDir))
                 MyInfo += Environment.NewLine + MyFile;
@@ -27,7 +30,7 @@ namespace MyForm
 
         private void button2_Click(object sender, EventArgs e)
         {//获取指定目录中的所有子目录
-            var MyDir = @"C:\Windows";
+            
             var MyInfo = MyDir + "目录中的所有子目录包括：";
             foreach (string MyFile in System.IO.Directory.GetDirectories(MyDir))
                 MyInfo += Environment.NewLine + MyFile;
@@ -36,7 +39,7 @@ namespace MyForm
 
         private void button3_Click(object sender, EventArgs e)
         {//获取指定目录中的子目录和文件
-            var MyDir = @"C:\Windows";
+            
             var MyInfo = MyDir + "目录中的所有文件和子目录包括：";
             foreach (string MyFile in System.IO.Directory.GetFileSystemEntries(MyDir))
                 MyInfo += Environment.NewLine + MyFile;
@@ -45,7 +48,7 @@ namespace MyForm
 
         private void button4_Click(object sender, EventArgs e)
         {//按条件过滤指定目录中的文件
-            var MyDir = @"C:\Windows";
+            
             var MyFilter = "*.exe";
             var MyInfo = MyDir + "目录下的所有" + MyFilter + "文件包括：";
             foreach (string MyFile in System.IO.Directory.GetFiles(MyDir, MyFilter))
@@ -160,8 +163,8 @@ namespace MyForm
             var MyRight = System.Security.AccessControl.FileSystemRights.FullControl;
             var MyType = System.Security.AccessControl.AccessControlType.Allow;
             var MyAccount = "luobin\\Administrator";
-            var MyDirInfo = new System.IO.DirectoryInfo(MyDirName);
-            var MyDirSecurity = MyDirInfo.GetAccessControl();
+            DirectoryInfo MyDirInfo = new  (MyDirName);
+            DirectorySecurity MyDirSecurity = MyDirInfo.GetAccessControl();
             MyDirSecurity.AddAccessRule(new System.Security.AccessControl.FileSystemAccessRule(MyAccount, MyRight, MyType));
             MyDirInfo.SetAccessControl(MyDirSecurity);
             MessageBox.Show("增加目录访问权限操作成功！", "信息提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -169,8 +172,8 @@ namespace MyForm
         private void button14_Click(object sender, EventArgs e)
         {//移除指定目录的访问权限：NTFS 2003环境测试
             var MyDirName = "F:\\MyTempDir";
-            var MyRight = System.Security.AccessControl.FileSystemRights.FullControl;
-            var MyType = System.Security.AccessControl.AccessControlType.Allow;
+            var MyRight =  FileSystemRights.FullControl;
+            var MyType =  AccessControlType.Allow;
             var MyAccount = "luobin\\Administrator";
             var MyDirInfo = new System.IO.DirectoryInfo(MyDirName);
             var MyDirSecurity = MyDirInfo.GetAccessControl();
